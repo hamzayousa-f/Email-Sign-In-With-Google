@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
+import '../components/my_button.dart';
 import '../components/my_textfield.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
   final usernameController = TextEditingController();
   final passwrodController = TextEditingController();
+
+  void signUserIn() {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,6 +50,66 @@ class LoginPage extends StatelessWidget {
                 controller: passwrodController,
                 hintText: 'Password',
                 obscureText: true,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      'Forgot Password',
+                      style: TextStyle(
+                        color: Colors.grey[600],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 25,
+              ),
+              MyButton(
+                onTap: signUserIn,
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.grey[400],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Text(
+                        'Or Continue With',
+                        style: TextStyle(color: Colors.grey[400]),
+                      ),
+                    ),
+                    Expanded(
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.grey[400],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                children: [
+                  Image.asset(
+                    'lib/Images/google.png',
+                    height: 72,
+                  )
+                ],
               ),
             ],
           ),
