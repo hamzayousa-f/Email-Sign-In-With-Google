@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../components/my_button.dart';
 import '../components/my_textfield.dart';
+import '../components/tiles.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -17,6 +18,7 @@ class LoginPage extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(
                 height: 52,
@@ -103,12 +105,45 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(
+                height: 50,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    'lib/Images/google.png',
-                    height: 72,
-                  )
+                  Tiles(
+                    imagePath: 'lib/Images/google.png',
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  Tiles(
+                    imagePath: 'lib/Images/apple.png',
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 25,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Not a Member?',
+                    style: TextStyle(
+                      color: Colors.grey[700],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    'Register Now',
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
             ],
